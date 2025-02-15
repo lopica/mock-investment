@@ -21,15 +21,22 @@
             <button class="absolute top-[20%] hover:bg-sky-200 rounded">⌚</button>
         </div>
     </section>
-    <section class="grid grid-cols-4 gap-8 mt-8">
-        <button :key="idx" type="button" v-for="(jar, idx) in moneyJars">
+    <section class="grid grid-cols-4 gap-12 mt-12">
+        <button
+                :key="idx"
+                type="button"
+                v-for="(jar, idx) in moneyJars"
+                class="group"
+        >
             <img
                     :alt="jar?.name"
                     :src="`assets/${jar.image}.png`"
-                    class="w-full h-[120px] object-scale-down"
+                    class="w-full h-[120px] object-scale-down rounded
+               group-hover:border-4 group-hover:border-orange-500"
             >
             <span>{{ jar?.name }}</span>
         </button>
+
     </section>
 </div>
 <script src="index.js" type="module"></script>
